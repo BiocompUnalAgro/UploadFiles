@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&display=swap');
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.upper {
+    width: 100%;
+    height: 70px;
+    background-color: darkseagreen;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.upper .logo{
+    left: 0;
+}
+
+.bodyh .title {
+    text-align: center;
+}
+
+.bodyh .cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.body .cont .text {
+    width: 70%;
+}
+
+.bodyh .cont .text p {
+    text-align: justify;
+    font-size: 25px;
+}
+
+.bodyh .upload {
+    text-align: center;
+}

@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+    <link rel="icon" href="{% static 'images/Postgresql.ico' %}">
+    <title>Cargar base de datos</title>
+</head>
+<body>
+    <div class="upper">
+        <div class="logo">
+            <img src="{% static 'images/unal.png' %}" alt="" width="70px">
+        </div>
+        <div class="title">
+            <h1>
+                Carga de Datos a PostgreSQL
+            </h1>
+        </div>
+    </div>
+    <div class="bodyh">
+        <div class="title">
+            <h1>
+                Laboratorio de agrocomputación y análisis epidemilógico
+            </h1>
+        </div>
+        <div class="cont">
+            <div class="text">
+                <p>
+                    Esta aplicación esta diseñada para cargar datos desde Excel (archivos .xlsx) y hacer un preprocesamiento de los datos que contiene el archivos
+                    para la carga de estos a una base de datos en PostgreSQL alojada en el servidor del laboratorio. 
+                </p>
+                <p>
+                    Para poder consultar las bases de datos alojadas en el servidor se debe accesar a la ip 168.176.46.81 en el cual se asiganará una tabla con el nombre
+                    del archivo que se suba, por ende, este archivo no debe tener carácteres especiales (como la ñ o tíldes) ni espacios. Ej: nombre_datos.xlsx
+                </p>
+                <p>
+                    Para acceder a la base de datos se debe tener un usuario y una contraseña, los cuales serán dados una vez se tengan las credenciales y aprovación
+                    por parte del encargado del laboratorio.
+                </p>
+            </div>
+        </div>
+        <div class="upload">
+            <div>
+                <h1>
+                    Carga el archivo Excel
+                </h1>
+            </div>
+            <div class="upload_file">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="myfile">
+                    <br>
+                    <br>
+                    <button type="submit">Cargar</button>
+                  </form>
+            </div>
+            <div class="result"
+                <p>{{ uploaded_file }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
